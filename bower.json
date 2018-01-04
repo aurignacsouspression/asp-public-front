@@ -34,5 +34,8 @@
   },
   "devDependencies": {
     "bootstrap-sass": "~3.3.5"
+  },
+  "resolutions": {
+    "angulartics": "~1.0.0"
   }
 }
