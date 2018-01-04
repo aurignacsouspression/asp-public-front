@@ -1,0 +1,58 @@
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">S'abonner à la newsletter</h4>
+            </div>
+            <div class="modal-body">
+                <form action="//aurignacsouspression.us2.list-manage.com/subscribe/post?u=d8c9c3d47dd868d3e8b0387f8&amp;id=da7b2a3501" method="post"
+                id="newsletterForm" name="newsletterForm" class="form-horizontal" target="_blank" novalidate>
+                    <div class="form-group" ng-class="{'has-error': !newsletterForm.EMAIL.$pristine && newsletterForm.EMAIL.$invalid}">
+                        <label for="mce-EMAIL" class="col-md-3 control-label">Adresse mail</label>
+                        <div class="col-md-9">
+                            <input type="email" name="EMAIL" ng-model="email" class="form-control" id="mce-EMAIL" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mce-LNAME" class="col-md-3 control-label">Nom</label>
+                        <div class="col-md-9">
+                            <input type="text" name="LNAME" class="form-control" id="mce-LNAME">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mce-FNAME" class="col-md-3 control-label">Prénom</label>
+                        <div class="col-md-9">
+                            <input type="text" name="FNAME" class="form-control" id="mce-FNAME">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mce-ZIP" class="col-md-3 control-label">Code Postal</label>
+                        <div class="col-md-9">
+                            <input type="number" name="ZIP" class="form-control" id="mce-ZIP">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mce-CITY" class="col-md-3 control-label">Ville</label>
+                        <div class="col-md-9">
+                            <input type="text" name="CITY" class="form-control" id="mce-CITY">
+                        </div>
+                    </div>
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;">
+                        <input type="text" name="b_d8c9c3d47dd868d3e8b0387f8_da7b2a3501" tabindex="-1" value="">
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button type="submit" class="btn btn-primary" ng-disabled="newsletterForm.$invalid" ng-click="$hide()">Valider</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-ribbon">
+                <span>Au contact !</span>
+            </div>
+            <div class="col-md-4">
+                <div class="newsletter">
+                    <h4 class="heading-primary">Newsletter</h4>
+                    <p>Inscrivez-vous à notre newsletter pour être tenus au courant lors de la publication des photos, de l'ouverture
+                        des réservations... Pas de spam, 5-6 mails par an maximum !</p>
+
+                    <div class="alert alert-success hidden" id="newsletterSuccess">
+                        <strong>Success!</strong> You've been added to our email list.
+                    </div>
+
+                        <div class="alert alert-danger hidden" id="newsletterError"></div>
+
+                    <button class="btn btn-default" ng-click="footer.openNewsLetterForm()">Je m'inscris !</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4 class="heading-primary">Facebook</h4>
+                <div class="fb-page" data-href="https://www.facebook.com/AurignacSousPression" data-width="500" data-small-header="false" data-hide-cta="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/AurignacSousPression"><a href="https://www.facebook.com/AurignacSousPression">Aurignac Sous Pression</a></blockquote></div></div>
+            </div>
+            <div class="col-md-4">
+                <h4 class="heading-primary">Twitter</h4>
+                <a class="twitter-timeline" href="https://twitter.com/aurignac_sp" data-widget-id="642333037037023232" data-chrome="nofooter noheader transparent"
+                data-tweet-limit="1">Tweets de @aurignac_sp</a>
+                <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <!--<div class="col-md-1 col-md-offset-0 col-xs-4 col-xs-offset-4">
+                            <a ui-sref="home" class="logo">
+                                <img filter="blur" alt="Aurignac Sous Pression" class="img-responsive" src="img/logodefaurignacarre.png">
+                            </a>
+                        </div>-->
+
+                <div class="visible-xs"></div>
+
+                <div class="col-md-7 col-xs-12">
+                    <p>© Copyright 2011-2017. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-5">
+                    <nav id="sub-menu">
+                        <ul>
+                            <li><a ui-sref="presentation">A propos</a></li>
+                            <li><a ui-sref="contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

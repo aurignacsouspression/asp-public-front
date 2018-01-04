@@ -1,0 +1,126 @@
+<asp-header data-header="::brasseurs.header"></asp-header>
+<div id="brasseurs" class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <p class="lead">
+                Cette année, ce sont pas moins de 12 brasseurs artisanaux de toute la région qui vous donnent rendez-vous les 7 et 8 octobre
+                2017 pour vous faire découvrir leurs dernières créations. Nous vous proposons également de <a ui-sref="brassage" title="Inscrivez-vous pour un brassage participatif !">brasser votre propre bière</a> ! Et pour la deuxième année, <a ui-sref="concours" title="Pour tout savoir sur le concours de bière">un concours officiel</a> avec un jury composé des brasseurs eux-mêmes récompensera les meilleures bières réparties en 6 catégories.
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12">
+            <span us-spinner="{radius:30, width:8, length: 16, position: 'relative'}" spinner-key="loading" spinner-start-active="true"></span>
+        </div>
+    </div>
+
+    <div class="row brasseur-item" ng-repeat="brasseur in ::brasseurs.list">
+        <div class="col-md-12">
+            <div class="heading heading-primary heading-border heading-bottom-border">
+                <h2 class="text-uppercase">
+                    {{::brasseur.name}}
+                    <span class="hidden-xs">
+                        <span class="brasseur-address hidden-sm">{{::brasseur.postal}} {{::brasseur.city}}</span>
+                        <div class="brasseur-links">
+                            <button class="btn btn-primary btn-sm" ng-if="brasseurs.hasImages(brasseur)"
+                                asp-magnific-popup data-gallery="true" data-items="brasseurs.getBrewerImages(brasseur)">
+                                <i class="fa fa-picture-o"></i>&nbsp;&nbsp;En images
+                            </button>
+                            <a ng-href="{{::brasseur.internet}}" class="btn btn-primary btn-sm" ng-if="::brasseur.internet" target="_blank" title="Site internet">
+                                <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+                            </a>
+                            <a ng-href="{{::brasseur.facebook}}" class="btn btn-primary btn-sm" ng-if="::brasseur.facebook" target="_blank" title="Page Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>
+                    </span>
+                </h2>
+            </div>
+            <div class="brasseur-infos">
+                <div class="row visible-xs-block mb-md brasseur-links-sm">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-sm" ng-if="brasseurs.hasImages(brasseur)"
+                            asp-magnific-popup data-gallery="true" data-items="brasseurs.getBrewerImages(brasseur)">
+                            <i class="fa fa-picture-o"></i>&nbsp;&nbsp;En images
+                        </button>
+                        <a ng-href="{{::brasseur.internet}}" class="btn btn-primary btn-sm" ng-if="::brasseur.internet" target="_blank" title="Site internet">
+                            <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+                        </a>
+                        <a ng-href="{{::brasseur.facebook}}" class="btn btn-primary btn-sm" ng-if="::brasseur.facebook" target="_blank" title="Page Facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="img-thumbnail" ng-if="::brasseur.logo">
+                            <img ng-src="{{::brasseurs.imgRoot + 'logos/' + brasseur.logo}}" alt="Logo">
+                        </div>
+                        {{::brasseur.shortDescription}}
+                        <span ng-if="::brasseur.longDescription" class="brasseur-more">
+                            &nbsp;<i class="fa fa-caret-right"></i>&nbsp;
+                            <a ui-sref="brasseur({id: brasseur.$id})">Plus d'infos</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr class="invisible">
+        </div>
+    </div>
+
+    <span ng-if="brasseurs.loaded">
+        <hr>
+
+        <div class="row brasseur-item">
+            <div class="col-md-12">
+                <div class="heading heading-primary heading-border heading-bottom-border">
+                    <h2 class="text-uppercase">
+                        Black Mountain
+                        <span class="hidden-xs">
+                            <span class="brasseur-address hidden-sm">81260 ANGLES</span>
+                            <div class="brasseur-links">
+                                <a href="http://www.blackmountain.fr" class="btn btn-primary btn-sm" target="_blank" title="Site internet">
+                                    <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+                                </a>
+                                <a ng-href="https://www.facebook.com/BlackMountainCompagnie" class="btn btn-primary btn-sm" target="_blank" title="Page Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div>
+                        </span>
+                    </h2>
+                </div>
+                <div class="brasseur-infos">
+                    <div class="row visible-xs-block mb-md brasseur-links-sm">
+                        <div class="col-md-12">
+                            <a ng-href="http://www.blackmountain.fr" class="btn btn-primary btn-sm" target="_blank" title="Site internet">
+                                <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+                            </a>
+                            <a ng-href="https://www.facebook.com/BlackMountainCompagnie" class="btn btn-primary btn-sm" target="_blank" title="Page Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="img-thumbnail">
+                                <img src="img/brasseurs/blackMountain.png" alt="Logo">
+                            </div>
+                            Black Mountain, c'est la compagnie des grands whiskies du Sud-Ouest !
+                            A l'origine de Black Mountain Compagnie, quatre copains, quatre entrepreneurs toulousains aux parcours professionnels complémentaires.
+                            Quatre amis passionnés qui ont décidé de bâtir une distillerie destinée à produire de grands whiskies français du Sud-Ouest !
+                            Le pari est fou mais chacun avec ses compétences apportent sa pierre à l'édifice.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </span>
+
+
+</div>

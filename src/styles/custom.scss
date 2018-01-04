@@ -1,0 +1,153 @@
+@import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+
+$primary-color: #ff6600;
+
+//////////////////////////
+
+nav {
+    .simple:hover a {
+        padding-bottom: 10px !important;
+    }
+
+    .simple.active a:focus {
+        background-color: #ff6600 !important;
+    }
+}
+
+@media (max-width: $screen-sm-max) {
+    .arrow.hrt {
+        display: none;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    #header .header-nav.header-nav-push-top {
+        margin-top: -50px;
+    }
+}
+
+#footer .footer-copyright {
+    margin-top: 20px;
+}
+
+li.condensed {
+    margin-bottom: 0 !important;
+}
+
+ul.condensed {
+    li:not(:last-child) {
+        margin-bottom: 0 !important;
+    }
+}
+
+[asp-magnific-popup] > a {
+    cursor: zoom-in;
+}
+
+/***** ASP HEADER *****/
+@media (min-width: $screen-sm-min) {
+    #header-transclude-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+}
+
+.breadcrumb li::after {
+    content: "\a0"
+}
+
+/***** PROGRAMME *****/
+#programme {
+    .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        img {
+            max-height: 300px;
+        }
+    }
+}
+
+/***** BRASSEURS *****/
+#brasseurs {
+    [us-spinner] {
+        > .spinner {
+            margin-top: 150px;
+            height: 200px;
+        }
+    }
+}
+
+.brasseur-item {
+    .brasseur-links {
+        float: right;
+        text-transform: none;
+    }
+
+    .brasseur-links-sm {
+        margin-top: -10px;
+    }
+
+    .brasseur-address {
+        font-size: 14px;
+        font-weight: normal;
+        margin-left: 10px;
+    }
+
+    .brasseur-infos {
+        // display: flex;
+
+        .img-thumbnail {
+            margin: 3px 20px 15px 0;
+            float: left;
+            height: 100%;
+
+            > img {
+                height: 100px;
+            }
+        }
+    }
+
+    .brasseur-more {
+        color: $primary-color;
+    }
+}
+
+/***** DETAILS BRASSEUR *****/
+#brewer-contact {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+#brewer-carousel {
+    img {
+        object-fit: cover;
+        height: 200px;
+        width: 200px;
+    }
+}
+
+/***** MAGNIFIC POPUP *****/
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    /* ideally, transition speed should match zoom duration */
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+    opacity: 0;
+}

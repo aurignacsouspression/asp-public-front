@@ -1,0 +1,36 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="#">Acceuil</a></li>
+                    <li class="active">Hébergements</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Hébergements</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div ng-repeat="hebergement in hebergement.hebergements">
+                    <div class="col-md-12">
+                        <div><a ui-sref="hebergement({id:hebergement.$id})">
+											<span class="thumb-info-title">
+												<h4><span class="thumb-info-inner">{{ hebergement.name }}</span></h4>
+                            <span>{{ hebergement.city }}</span>
+                            <span>{{ hebergement.email }}</span>
+                            <span>{{ hebergement.postal }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

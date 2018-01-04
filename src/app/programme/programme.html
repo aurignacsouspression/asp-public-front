@@ -1,0 +1,142 @@
+<asp-header data-header="programme.header" data-onload="programme.onload()"></asp-header>
+
+<div class="container" <div class="row">
+    <div class="col-md-3">
+        <aside class="sidebar" id="sidebar" asp-sticky data-plugin-options='{"minWidth": 991, "containerSelector": ".container", "padding": {"top": 110}}'>
+
+            <!--<h4 class="heading-primary">Categories</h4>-->
+            <ul class="nav nav-list mb-xl show-bg-active">
+                <li>
+                    <a asp-hash-scroll data-hash-offset="85" href="#commun"><b>Tout le week-end</b></a>
+                    <!--<ul>
+                            <li><a asp-hash-scroll data-hash-offset="85" href="#sub-first-1">Samedi</a></li>
+                            <li><a asp-hash-scroll data-hash-offset="85" href="#sub-first-2">Dimanche</a></li>
+                        </ul>-->
+                </li>
+                <li><a asp-hash-scroll data-hash-offset="85" href="#samedi"><b>Samedi</b></a></li>
+                <li><a asp-hash-scroll data-hash-offset="85" href="#dimanche"><b>Dimanche</b></a></li>
+            </ul>
+
+            <a href="brassage" class="hidden-xs hidden-sm">
+                <span class="thumb-info">
+                        <span class="thumb-info-wrapper">
+                            <img src="img/2015/brassage_aside.jpg" class="img-responsive" alt="">
+                            <span class="thumb-info-title">
+                                <span class="thumb-info-inner">Brassez votre bière !</span>
+                </span>
+                <span class="thumb-info-action">
+                                <span class="thumb-info-action-icon"><i class="fa fa-beer"></i></span>
+                </span>
+                </span>
+                </span>
+            </a>
+
+        </aside>
+    </div>
+
+    <div class="col-md-9" id="programme">
+        <p>Comme chaque année, Aurignac Sous Pression vous accueille durant tout le premier week-end d'octobre : <strong>samedi 7 et dimanche 8 octobre 2017.</strong> Rendez-vous à partir de 15h00 le samedi pour une soirée brésilienne en mode samba, et rebelote le dimanche dès 10h00 jusqu'en fin d'après-midi.</p>
+
+        <p>Pour clôturer le week-end, nous remettrons le <strong>7ème brassin d'or</strong> d'Aurignac Sous Pression, qui récompense
+            la bière préférée du public. Inauguré en 2016, le <strong><a ui-sref="concours" title="Pour tout savoir sur le concours de bière"> concours officiel</a></strong> revient, avec un jury composé notamment des brasseurs eux-mêmes qui récompensera également les bières réparties dans 6 catégories.</p>
+
+        <!-- <p>Le programme n'est pas encore définitif et a vocation à être complété progressivement d'ici début octobre :)</p> -->
+
+        <h2 class="mb-sm text-uppercase" id="commun">
+            <b>Tout le week-end</b>
+        </h2>
+        <ul class="list list-icons list-icons-sm">
+            <!--<li ng-repeat="line in programme.weekend" style="margin-bottom: 3px;">
+                    <i class="fa fa-caret-right"></i><span ng-bind-html="line"></span>
+                </li>-->
+
+            <li><i class="fa fa-caret-right"></i><b>Salon des brasseries artisanales et des brasseurs amateurs</b> avec plus
+                d'une dizaine de brasseurs venus de toute la région et même au-delà ! Rencontre, dégustations, exposition
+                de matériel de brassage.</li>
+            <!--<li><i class="fa fa-caret-right"></i><b><a href="brassage">Brassage public participatif chaque jour</a></b> et forums
+                : comment brasser sa bière ?</li>-->
+            <li><i class="fa fa-caret-right"></i>Présence de <a href="http://www.blackmountain.fr/" target="_blank"
+                    title="Découvrez le site internet de Black Mountain">Black Mountain</a>, la marque des grands whiskies du
+                Sud-Ouest.</li>
+            <li><i class="fa fa-caret-right"></i><b>Grand rassemblement de Harley-Davidson, Indian, Victory, Royal Enfield, voitures américaines...</b> avec parking dédié sur place.</li>
+            <li><i class="fa fa-caret-right"></i>De retour des routes extrêmes de l'arctique sur sa Harley, <strong>Eric Lobo</strong> sera de nouveau parmi nous cette année. Venez écouter et rencontrer cet aventurier des temps modernes !
+            <li class="condensed"><i class="fa fa-caret-right"></i>Expositions motos avec :</li>
+            <ul class="condensed">
+                <li><a href="http://www.customs-planet.com/" target="_blank" title="Site internet">Customs-Planet</a>, concessionnaire
+                    Indian et Victory</li>
+                <!-- <li><a href="http://www.americanbikescustomandcars.fr/" target="_blank" title="Site internet">American Bikes - Custom & Cars</a>,
+                    importateur Boss Hoss et Travertson</li> -->
+                <li><a href="http://www.american-motos.com/" target="_blank" title="Site internet">American Moto</a>, concessionnaire
+                    Harley-Davidson
+                </li>
+                <!--<li><a href="http://www.vtm-auch.com/" target="_blank" title="Site internet">VTM</a>, spécialiste Harley-Davidson et concessionnaire Mash et Leonart
+                </li>-->
+                <li>Jacques SANNIER, motos Headbanger, Leonart et vélos électriques</li>
+            </ul>
+            <li><i class="fa fa-caret-right"></i>Présence de <a href="http://www.roadtripfactory.com/" target="_blank" title="Rendez-vous sur leur site internet pour plus d'infos">Road Trip Factory</a>, spécialiste des voyages en motos.</li>
+            <li><i class="fa fa-caret-right"></i><strong>Show-bike</strong> exceptionnel de motos customs et présence d'exposants, artisans, marchands et tatoueurs de l'univers de la moto.
+            </li>
+            <li><i class="fa fa-caret-right"></i>Jeux bikers : course de lenteur, parcours d'agilité... avec lots à la clé pour les plus adroits !</li>
+            <li><i class="fa fa-caret-right"></i>Initiation et concours de fléchettes avec le "WoodPecker Dart's Club" de Saint-Martory.</li>
+        </ul>
+
+        <section class="call-to-action call-to-action-quaternary mt-xl mb-xl">
+            <div class="call-to-action-content">
+                <h3>Découvrez la liste des <strong>brasseurs</strong></h3>
+                <p>Il y en aura pour tous les goûts !</p>
+            </div>
+            <div class="call-to-action-btn">
+                <a ui-sref="brasseurs" class="btn btn-lg btn-default">Les brasseurs</a>
+            </div>
+        </section>
+
+        <div class="row mt-xl">
+            <div class="col-md-8">
+                <h2 class="mb-sm text-uppercase" id="samedi">
+                    <b>Le samedi</b> (à partir de 15h00)</h2>
+                <ul class="list list-icons list-icons-sm">
+                    <li ng-repeat="line in programme.samedi" style="margin-bottom: 3px;">
+                        <i class="fa fa-caret-right"></i><span ng-bind-html="line"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <img src="img/2017/samba_color.jpg" class="img-thumbnail" alt="Samba Color" title="Samba Color">
+            </div>
+        </div>
+
+        <div class="row mt-xl">
+            <div class="col-md-8">
+                <h2 class="mb-sm text-uppercase" id="dimanche">
+                    <b>Le dimanche</b> (dès 11h00)</h2>
+                <ul class="list list-icons list-icons-sm">
+                    <li ng-repeat="line in programme.dimanche" style="margin-bottom: 3px;">
+                        <i class="fa fa-caret-right"></i><span ng-bind-html="line"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <img src="img/2017/meu_brasil.jpg" class="img-thumbnail" alt="Meu Brasil" title="Meu Brasil">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<section class="call-to-action call-to-action-default with-button-arrow call-to-action-in-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="call-to-action-content">
+                    <h3><strong>Réservez vos repas</strong> rapidement, les places sont limitées !</h3>
+                    <p>Découvrez le <strong>détail des menus</strong> <a ui-sref="reservation">en cliquant ici</a></p>
+                </div>
+                <div class="call-to-action-btn">
+                    <a ui-sref="reservation" class="btn btn-lg btn-primary">+ d'infos</a>
+                    <span class="arrow hlb hidden-xs hidden-sm hidden-md appear-animation rotateInUpLeft appear-animation-visible" asp-animation
+                        data-appear-animation="rotateInUpLeft" style="top: -12px;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

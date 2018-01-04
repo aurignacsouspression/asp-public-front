@@ -1,0 +1,109 @@
+<asp-header data-header="::partenaires.header"></asp-header>
+<div id="brasseurs" class="container" asp-magnific-popup data-gallery="true" data-delegate="a.ad">
+
+    <div class="row">
+        <div class="col-md-12">
+            <p class="lead">
+                C'est grâce au soutien renouvelé de nos partenaires que nous réussissons année après année
+                à vous proposer un week-end toujours plus réussi : merci à eux ! Vous pouvez également récupérer le livret-programme
+                <a href="assets/Livret_2017.pdf" target="_blank" title="Livret 2017 (PDF)">en cliquant ici</a>.
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12">
+            <span us-spinner="{radius:30, width:8, length: 16, position: 'relative'}" spinner-key="loading" spinner-start-active="true"></span>
+        </div>
+    </div>
+
+    <div class="row" ng-if="partenaires.loaded">
+        <div class="col-md-12">
+            <h2 class="text-uppercase">Partenaires principaux</h2>
+        </div>
+    </div>
+
+    <div class="row brasseur-item" ng-repeat="partenaire in ::partenaires.mainList">
+        <div class="col-md-12">
+            <div class="heading heading-primary heading-border heading-bottom-border">
+                <h4 class="text-uppercase">
+                    {{::partenaire.name}}
+                    <span class="hidden-xs">
+                        <span class="brasseur-address hidden-sm">{{::partenaire.postal}} {{::partenaire.city}}</span>
+                        <div class="brasseur-links">
+                            <a class="btn btn-primary btn-sm ad" target="_self"
+                                ng-if="::partenaire.pub"
+                                ng-href="{{partenaires.adRootPath}}{{::partenaire.size}}/{{::partenaire.pub}}">
+                                <i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Annonce
+                            </a>
+                            <a ng-href="{{::partenaire.internet}}" class="btn btn-primary btn-sm" ng-if="::partenaire.internet" target="_blank" title="Site internet">
+                                <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+                            </a>
+                            <a ng-href="{{::partenaire.facebook}}" class="btn btn-primary btn-sm" ng-if="::partenaire.facebook" target="_blank" title="Page Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>
+                    </span>
+                </h4>
+            </div>
+            <div class="row visible-xs-block mb-xl" style="margin-top: -20px;">
+                <div class="col-md-12">
+                    <a ng-href="{{::partenaire.internet}}" class="btn btn-primary btn-xs" ng-if="::partenaire.internet" target="_blank" title="Site internet">
+                        <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+                    </a>
+                    <a ng-href="{{::partenaire.facebook}}" class="btn btn-primary btn-xs" ng-if="::partenaire.facebook" target="_blank" title="Page Facebook">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <hr class="invisible hidden-xs">
+        </div>
+    </div>
+
+    <div class="row" ng-if="partenaires.loaded">
+        <hr>
+        <div class="col-md-12">
+            <h2 class="text-uppercase">Partenaires</h2>
+        </div>
+    </div>
+
+    <div class="row brasseur-item" ng-repeat="partenaire in ::partenaires.secondList">
+        <div class="col-md-12">
+            <div class="heading heading-primary heading-border heading-bottom-border">
+                <h4 class="text-uppercase">
+                    {{::partenaire.name}}
+                    <span class="hidden-xs">
+                        <span class="brasseur-address hidden-sm">{{::partenaire.postal}} {{::partenaire.city}}</span>
+                        <div class="brasseur-links">
+                            <a class="btn btn-primary btn-sm ad" target="_self"
+                                ng-if="::partenaire.pub"
+                                ng-href="{{partenaires.adRootPath}}{{::partenaire.size}}/{{::partenaire.pub}}">
+                                <i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Annonce
+                            </a>
+                            <a ng-href="{{::partenaire.internet}}" class="btn btn-primary btn-sm" ng-if="::partenaire.internet" target="_blank" title="Site internet">
+                                <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+                            </a>
+                            <a ng-href="{{::partenaire.facebook}}" class="btn btn-primary btn-sm" ng-if="::partenaire.facebook" target="_blank" title="Page Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>
+                    </span>
+                </h4>
+            </div>
+            <div class="row visible-xs-block mb-xl" style="margin-top: -20px;">
+                <div class="col-md-12">
+                    <a ng-href="{{::partenaire.internet}}" class="btn btn-primary btn-xs" ng-if="::partenaire.internet" target="_blank">
+                        <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+                    </a>
+                    <a ng-href="{{::partenaire.facebook}}" class="btn btn-primary btn-xs" ng-if="::partenaire.facebook" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <hr class="invisible hidden-xs">
+        </div>
+    </div>
+
+</div>

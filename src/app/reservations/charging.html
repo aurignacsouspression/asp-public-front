@@ -1,0 +1,28 @@
+<asp-header data-header="{title: 'Paiement en cours...'}"></asp-header>
+
+<div class="container">
+  <div ng-if="!payment.error">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="lead">
+          Validation du paiement en cours, merci de ne pas quitter la page...
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12" style="position: relative; height: 150px;">
+        <span us-spinner="{radius:30, width:8, length: 16, position: 'relative'}" spinner-key="loading" spinner-start-active="true"
+          style="position: absolute; width: 0px; z-index: 2000000000; left: 50%; top: 50%;"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" ng-if="payment.error">
+    <div class="col-md-12">
+      <p class="lead">
+        Votre paiement n'a pas pu être validé, vous allez être redirigé vers la page de réservation...
+      </p>
+    </div>
+  </div>
+</div>

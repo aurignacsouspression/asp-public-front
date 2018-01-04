@@ -1,0 +1,38 @@
+{
+  "name": "asp_front",
+  "version": "0.0.1",
+  "authors": [
+    "Pierric Cistac <pierrot007@gmail.com>"
+  ],
+  "description": "Packages bower de la partie front aurignacsouspression.fr",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-animate": "~1.4.5",
+    "angular-motion": "~0.4.2",
+    "angular-recaptcha": "~2.2.5",
+    "angular-sanitize": "~1.4.5",
+    "angular-spinner": "~0.7.0",
+    "angular-strap": "~2.3.1",
+    "angular-ui-router": "~0.2.15",
+    "angularfire": "~1.1.2",
+    "angulartics": "~0.20.0",
+    "angulartics-google-analytics": "~0.1.1",
+    "bootstrap": "~3.3.5",
+    "firebase": "~2.2.7",
+    "font-awesome": "~4.4.0",
+    "jquery": "~2.1.4",
+    "magnific-popup": "~1.0.0",
+    "ngmap": "~1.13.4"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "~3.3.5"
+  }
+}

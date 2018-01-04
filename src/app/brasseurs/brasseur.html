@@ -1,0 +1,48 @@
+<asp-header data-header="::brasseur.header">
+    <div class="hidden-xs">
+        <span id="brewer-contact">{{::brasseur.details.contactName}}</span>
+        <span class="brasseur-links">
+            <a ng-href="{{::brasseur.details.internet}}" class="btn btn-primary btn-sm" ng-if="::brasseur.details.internet" target="_blank">
+                <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+            </a>
+            <a ng-href="{{::brasseur.details.facebook}}" class="btn btn-primary btn-sm" ng-if="::brasseur.details.facebook" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+        </span>
+    </div>
+</asp-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" asp-magnific-popup data-gallery="true" data-zoom="true">
+            <div id="brewer-carousel" owl-carousel data-responsive="{{::brasseur.responsiveImages}}" data-items="5" data-nav="true"
+                data-dots="false" data-margin="10" data-stage-padding="40">
+                <div owl-carousel-item ng-repeat="image in ::brasseur.details.contentImages" ng-if="::image.active">
+                    <a class="img-thumbnail img-thumbnail-hover-icon mb-xs mr-xs"
+                    ng-href="{{::brasseur.imgRoot}}medium/{{::image.filename}}" target="_self">
+                        <img class="img-responsive" ng-src="{{::brasseur.imgRoot}}thumbs/{{::image.filename}}">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" ng-bind-html="::brasseur.details.longDescription">
+        </div>
+    </div>
+
+    <div class="row visible-xs-block">
+        <div class="col-md-12 mt-md" style="float: right;">
+            <span style="margin-right: 10px;">{{::brasseur.details.contactName}}</span>
+            <span class="brasseur-links">
+                <a ng-href="{{::brasseur.details.internet}}" class="btn btn-primary btn-sm" ng-if="::brasseur.details.internet" target="_blank">
+                    <i class="fa fa-external-link"></i>&nbsp;&nbsp;&nbsp;www
+                </a>
+                <a ng-href="{{::brasseur.details.facebook}}" class="btn btn-primary btn-sm" ng-if="::brasseur.details.facebook" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+</div>

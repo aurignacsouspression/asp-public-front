@@ -1,0 +1,19 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row" ng-if="header.breadcrumb">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li ng-repeat="page in ::header.breadcrumb" ng-class="::page.class">
+                        <a ui-sref="{{::page.state}}" ng-bind-html="::page.title"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div id="header-transclude-container" class="col-md-12">
+                <h1 ng-bind="header.title"></h1>
+                <ng-transclude></ng-transclude>
+            </div>
+        </div>
+    </div>
+</section>

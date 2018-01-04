@@ -1,0 +1,124 @@
+<asp-header data-header="::expo.header"></asp-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="visible-sm-block" style="float: right;">
+                <img src="img/2015/voitures.jpg" class="img-thumbnail ml-md mb-md" style="max-width: 300px;" alt="Exposez votre voiture">
+            </div>
+            <p>
+                Vous possédez une <strong>voiture américaine d'exception</strong> ou une <strong>moto de collection</strong> ? Venez l'exposer à Aurignac Sous Pression
+                le dimanche 8 octobre, nous vous offrons <strong>2 repas gratuits</strong> le midi (sous confirmation, dans la limite des places disponibles) ! Il vous suffit de vous
+                inscrire le <strong>3 octobre au plus tard</strong> via le formulaire ci-dessous, après avoir lu les conditions
+                de participations suivantes. Pour toutes questions, merci d'utiliser notre <a ui-sref="contact">formulaire de contact</a>.
+            </p>
+            <span><i>Côté exposant :</i></span>
+            <ul class="list list-icons list-icons-sm condensed">
+                <li><i class="fa fa-caret-right"></i>Vous n'exposez pas votre véhicule dans le but de le vendre.</li>
+                <li><i class="fa fa-caret-right"></i>Vous vous engagez à arriver pour 10h et à repartir au plus tôt à 18h. Pendant
+                    toute cette durée la voiture / moto sera exposée dans une zone réservée à cet effet.</li>
+                <li><i class="fa fa-caret-right"></i>Un mini cruising de maximum 15kms sera organisé durant l’après-midi afin
+                    de dynamiser l’exposition. Votre participation est grandement souhaitée mais non obligatoire. 2 groupes
+                    de voitures partiront séparément avec environ 1 heure de décalage pour un parcours identique. Lors du
+                    retour sur la zone d’exposition, juste avant de re-garer la voiture ou la moto, notre speaker interviewera chaque
+                    conducteur sur les spécificités de son véhicule afin de mieux le faire connaître aux visiteurs.</li>
+            </ul>
+            <span><i>Côté Aurignac Sous Pression :</i></span>
+            <ul class="list list-icons list-icons-sm condensed">
+                <li><i class="fa fa-caret-right"></i>Nous validerons votre inscription par Email avec un bon de participation
+                    nominatif à imprimer et à remettre au stand d’accueil.</li>
+                <li><i class="fa fa-caret-right"></i>En contrepartie vous seront remis 1 ou 2 tickets repas par voiture ou moto dans
+                    la limite du nombre disponible.</li>
+                <li><i class="fa fa-caret-right"></i>Le conducteur devra se présenter accompagné de son passager pour obtenir
+                    le 2ème ticket.</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="offset-anchor" id="contact-sent"></div>
+            <div class="alert alert-success" id="contactSuccess" ng-if="expo.success">
+                <strong>Demande de participation enregistrée !</strong> Vous recevrez prochainement un mail vous indiquant
+                si votre véhicule a bien été retenu, avec dans ce cas votre bon de participation vous permettant de profiter
+                de vos repas offerts. Pour toute question, vous pouvez nous contacter via notre <a ui-sref="contact">formulaire de contact</a>.
+            </div>
+            <div class="alert alert-danger" id="contact-error" ng-if="expo.failure">
+                <strong>Une erreur est survenue :(</strong> Veuillez vérifier les données saisies ou essayez de recharger
+                la page. Si le problème persiste, vous pouvez nous contacter via notre <a ui-sref="contact">formulaire de contact</a>.
+            </div>
+
+            <h2 class="mb-sm mt-sm text-uppercase">Inscription</h2>
+            <!-- <p>Nous avons atteint le quotas de repas à offrir. Néanmoins nous vous accueillerons avec plaisir avec votre véhicule
+                américain, et vous pourrez l'exposer dans un parking dédié.</p> -->
+            <form name="expoForm" ng-submit="expo.send()" novalidate>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label>Nom et prénom du conducteur *</label>
+                            <input type="text" ng-model="expo.form.driver" maxlength="100" class="form-control" name="driver" id="driver" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Nom et prénom du passager</label>
+                            <input type="text" ng-model="expo.form.passenger" maxlength="100" class="form-control" name="passenger" id="passenger">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label>Votre adresse mail *</label>
+                            <input type="email" ng-model="expo.form.email" maxlength="100" class="form-control" name="email" id="email" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Votre numéro de téléphone *</label>
+                            <input type="tel" ng-model="expo.form.phone" maxlength="100" class="form-control" name="tel" id="tel" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label>Marque et modèle du véhicule *</label>
+                            <input type="text" ng-model="expo.form.vehicle" maxlength="100" class="form-control" name="vehicle" id="vehicle">
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Année du véhicule *</label>
+                            <input type="number" ng-model="expo.form.year" maxlength="100" class="form-control" name="year" id="year">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label>Particularités</label>
+                            <textarea class="form-control" ng-model="expo.form.particularities" name="particularities" id="particularities" cols="30" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-md">
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <div vc-recaptcha key="'6LfA7MMSAAAAAM7oAh1CzSXPoTOYkfrEl4EIc6KP'" on-success="expo.setCaptchaResponse(response)"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="submit" id="expoFormSubmit" value="Je m'inscris" class="btn btn-primary btn-lg pull-right mb-sm" ng-disabled="expoForm.$invalid">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4 hidden-sm">
+            <img src="img/2015/voitures.jpg" alt="Exposez votre voiture" class="img-thumbnail mt-lg hidden-xs">
+            <!--<img src="img/2015/voitures_2.jpg" alt="Exposez votre voiture" class="img-thumbnail mt-lg hidden-xs">-->
+        </div>
+    </div>
+
+</div>

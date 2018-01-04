@@ -1,0 +1,101 @@
+<asp-header data-header="::contest.header"></asp-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="visible-sm-block" style="float: right;">
+                <img src="img/bike-contest.jpg" class="img-thumbnail ml-md mb-md" style="max-width: 300px;" alt="Participez à notre Bike Contest">
+            </div>
+            <p>Ami motard, si tu possèdes une <b>moto customisée</b> ce message s’adresse à toi !</p>
+            <p>Aurignac Sous Pression vous propose de participer à son 1er Bike Contest qui se déroulera le dimanche 8 octobre 2017 à partir de 11h00 sous notre chapiteau. Les motos customs présentées seront classées en 4 catégories :
+                <ul>
+                    <li>Bagger</li>
+                    <li>Chopper</li>
+                    <li>Bobber</li>
+                    <li>Rétro</li>
+                </ul>
+            </p>
+            <p>Des professionnels du genre établiront un classement et un prix sera attribué au gagnant de chacune des 4 catégories en fin d'après-midi.</p>
+            <p>
+                Pour être sûr de pouvoir participer, il suffit de remplir le formulaire ci-dessous. Sinon, RDV pour une inscription sur place le dimanche 8 octobre 2017 à partir de 11h00 sous notre chapiteau.
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="offset-anchor" id="contact-sent"></div>
+            <div class="alert alert-success" id="contactSuccess" ng-if="contest.success">
+                <strong>Demande de participation enregistrée !</strong> Vous recevrez prochainement un mail manuel vous confirmant votre inscription. Pour toute question, vous pouvez nous contacter via notre <a ui-sref="contact">formulaire de contact</a>.
+            </div>
+            <div class="alert alert-danger" id="contact-error" ng-if="contest.failure">
+                <strong>Une erreur est survenue :(</strong> Veuillez vérifier les données saisies ou essayez de recharger
+                la page. Si le problème persiste, vous pouvez nous contacter via notre <a ui-sref="contact">formulaire de contact</a>.
+            </div>
+
+            <h2 class="mb-sm mt-sm text-uppercase">Inscription</h2>
+            <!-- <p>Nous avons atteint le quotas de repas à offrir. Néanmoins nous vous accueillerons avec plaisir avec votre véhicule
+                américain, et vous pourrez l'exposer dans un parking dédié.</p> -->
+            <form name="contestForm" ng-submit="contest.send()" novalidate>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label>Nom et prénom *</label>
+                            <input type="text" ng-model="contest.form.name" maxlength="100" class="form-control" name="name" id="name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label>Adresse mail *</label>
+                            <input type="email" ng-model="contest.form.email" maxlength="100" class="form-control" name="email" id="email" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Numéro de téléphone *</label>
+                            <input type="tel" ng-model="contest.form.phone" maxlength="100" class="form-control" name="tel" id="tel" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <label>Année de première immatriculation de la moto *</label>
+                            <input type="number" ng-model="contest.form.year" maxlength="100" class="form-control" name="year" id="year">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label>Description de la moto et des motifications apportées</label>
+                            <textarea class="form-control" ng-model="contest.form.vehicle" name="vehicle" id="vehicle" cols="30" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-md">
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <div vc-recaptcha key="'6LfA7MMSAAAAAM7oAh1CzSXPoTOYkfrEl4EIc6KP'" on-success="contest.setCaptchaResponse(response)"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="submit" id="contestFormSubmit" value="Je m'inscris" class="btn btn-primary btn-lg pull-right mb-sm" ng-disabled="contestForm.$invalid">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4 hidden-sm">
+            <img src="img/bike-contest.jpg" alt="Participez à notre Bike Contest" class="img-thumbnail mt-lg hidden-xs">
+            <!--<img src="img/2015/voitures_2.jpg" alt="Exposez votre voiture" class="img-thumbnail mt-lg hidden-xs">-->
+        </div>
+    </div>
+
+</div>

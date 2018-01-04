@@ -1,0 +1,132 @@
+<asp-header data-header="contact.header"></asp-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="offset-anchor" id="contact-sent"></div>
+            <div class="alert alert-success" id="contactSuccess" ng-if="contact.success">
+                <strong>Message envoyé !</strong> Nous vous répondrons aussi rapidement que possible. Si vous avez demandé à recevoir une copie, il peut s'écouler quelques minutes avant que vous ne la receviez.
+            </div>
+            <div class="alert alert-danger" id="contact-error" ng-if="contact.failure">
+                <strong>Une erreur est survenue !</strong> Veuillez vérifier les données saisies ou essayez de recharger la page. Si le problème persiste,
+                vous pouvez nous contacter via notre page Facebook.
+            </div>
+
+            <!--<h2 class="mb-sm mt-sm"><strong>Contact</strong> Us</h2>-->
+            <form name="contactForm" ng-submit="contact.send()" novalidate>
+                <!--<input type="hidden" value="true" name="emailSent" id="emailSent">-->
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label>Votre nom *</label>
+                            <input type="text" ng-model="contact.form.username" maxlength="100" class="form-control" name="name" id="name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Votre adresse mail *</label>
+                            <input type="email" ng-model="contact.form.email" maxlength="100" class="form-control" name="email" id="email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Sujet *</label>
+                            <input type="text" ng-model="contact.form.subject" maxlength="100" class="form-control" name="subject" id="subject" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Attachment</label>
+                            <input type="file" name="attachment" id="attachment">
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label>Message *</label>
+                            <textarea ng-model="contact.form.text" rows="10" class="form-control" name="message" id="message" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <div vc-recaptcha key="'6LfA7MMSAAAAAM7oAh1CzSXPoTOYkfrEl4EIc6KP'" on-success="contact.setCaptchaResponse(response)"></div>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="checkbox" ng-model="contact.form.sendCopy"> Je veux recevoir une copie à mon adresse mail
+                        <input type="submit" id="contactFormSubmit" value="Envoyer" class="btn btn-primary btn-lg pull-right" ng-disabled="contactForm.$invalid">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--<div class="col-md-6">
+
+            <h4 class="heading-primary mt-lg">Get in <strong>Touch</strong></h4>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat urna arcu, vel molestie nunc commodo non.
+                Nullam vestibulum odio vitae fermentum rutrum.</p>
+
+            <p>Mauris lobortis nulla ut aliquet interdum. Donec commodo ac elit sed placerat. Mauris rhoncus est ac sodales
+                gravida. In eros felis, elementum aliquam nisi vel, pellentesque faucibus nulla.</p>
+
+            <hr>
+
+            <h4 class="heading-primary">The <strong>Office</strong></h4>
+            <ul class="list list-icons list-icons-style-3 mt-xlg">
+                <li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>
+                <li><i class="fa fa-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>
+                <li><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>
+            </ul>
+
+            <div class="row lightbox mt-xl" data-plugin-options='{"delegate": "a", "type": "image", "gallery": {"enabled": true}}'>
+                <div class="col-md-4">
+                    <a class="img-thumbnail" href="img/our-office-1.jpg" data-plugin-options='{"type":"image"}'>
+                        <img class="img-responsive" src="img/our-office-1.jpg" alt="Office">
+                        <span class="zoom">
+											<i class="fa fa-search"></i>
+										</span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a class="img-thumbnail" href="img/our-office-2.jpg" data-plugin-options='{"type":"image"}'>
+                        <img class="img-responsive" src="img/our-office-2.jpg" alt="Office">
+                        <span class="zoom">
+											<i class="fa fa-search"></i>
+										</span>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a class="img-thumbnail" href="img/our-office-3.jpg" data-plugin-options='{"type":"image"}'>
+                        <img class="img-responsive" src="img/our-office-3.jpg" alt="Office">
+                        <span class="zoom">
+											<i class="fa fa-search"></i>
+										</span>
+                    </a>
+                </div>
+            </div>
+
+            <hr>
+
+            <h4 class="heading-primary">Business <strong>Hours</strong></h4>
+            <ul class="list list-icons list-dark mt-xlg">
+                <li><i class="fa fa-clock-o"></i> Monday - Friday 9am to 5pm</li>
+                <li><i class="fa fa-clock-o"></i> Saturday - 9am to 2pm</li>
+                <li><i class="fa fa-clock-o"></i> Sunday - Closed</li>
+            </ul>
+
+        </div>-->
+    </div>
+
+</div>
