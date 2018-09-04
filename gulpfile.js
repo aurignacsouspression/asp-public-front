@@ -315,7 +315,7 @@ function startBrowserSync(isDev, specRunner) {
     }
 
     var options = {
-        proxy: isDev ? 'www.asp.dev:9999' : 'build.asp.dev:9999',
+        proxy: isDev ? 'www.asp.devv:9999' : 'build.asp.devv:9999',
         files: isDev ? [
             config.src + '**/*.*',
             '!' + config.scss,
