@@ -26,23 +26,23 @@
         // ];
 
         vm.samedi = [
-            "Pour les motards : <strong>Poker Loop</strong>, avec un parcours de 37 kms pour découvrir de façon ludique les alentours d'Aurignac",
-            "Apéritif musical ambiance <i>carioca</i>",
-            "<strong>Repas typique brésilien avec menus plat-dessert-café au choix</strong> (sur réservation, places limitées).",
-            "<strong>Soirée concert samba</strong> avec le groupe <strong>« Samba Color »</strong>."
+            "Pour la première fois : <strong>DJ contest</strong>",
+            "<strong>Apéritif musical</strong> « France des fifties » et première partie avec « Mystère Daoud »",
+            "<strong>Repas vintage avec menus plat-dessert-café au choix</strong> (sur réservation, places limitées).",
+            "<strong>Concert rockabilly</strong> avec le groupe <strong>« Rocking Billies » en deuxième partie de soirée</strong>."
         ];
 
         vm.dimanche = [
             '<a href="brassage">Brassage public participatif</a> (inscription obligatoire, places limitées)',
-            'Premier <a href="bike-contest">Bike Contest</a>, ouvert à tous les possesseurs de motos customs',
+            '<a href="bike-contest">Bike Contest</a>, ouvert à tous les possesseurs de motos customs',
+            '<strong>Jeux bikers</strong> (course de lenteur, concours de bras de fer…) avec nombreux lots à gagner !',
             "<strong>Zone d'expo-vente de motos customs et voitures américaines</strong> réservée aux particuliers",
             "Exposition de voitures (rassemblement au foirail d'Aurignac à 10h00) et motos collectors",
-            "Comme le samedi, <strong>repas typique brésilien avec 2 menus plat-dessert au choix</strong> le midi (sur réservation, places limitées là aussi !).",
-            "Animation musicale <strong>bossa nova</strong> avec Michel Devaux-Luez",
-            "<strong>Spectacle-revue « Samba Show »</strong> avec la compagnie « Meu Brasil »",
-            "Circuits balades libres pour les motards",
-            "Essais de motos des gammes Indian et Victory organisés par <i>Customs Planet</i>",
-            "Résultats du <strong>concours de bière</strong> officiel d'Aurignac Sous Pression 2017 et remise du <strong>brassin d'or</strong> à la bière préférée du public"
+            'Rassemblement de <strong>nombreuses 2CV</strong> pour les 70 ans de notre voiture mythique, avec animations-challenges : faire rentrer 22 personnes dans une seule 2CV et démonter/remonter une 2CV en « live » !',
+            "Comme le samedi, <strong>repas vintage avec 2 menus plat-dessert au choix</strong> le midi (sur réservation, places limitées là aussi !).",
+            "Animations musicales <strong>fifties</strong>",
+            "Circuits balades libres pour les motards et animations sécurité routière",
+            "Résultats du <strong>concours de bière</strong> officiel d'Aurignac Sous Pression 2018 et remise du <strong>brassin d'or</strong> à la bière préférée du public"
         ];
 
         vm.onload = onLoad;
