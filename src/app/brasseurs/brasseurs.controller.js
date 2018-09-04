@@ -15,7 +15,7 @@
 
         // Objet contenant les infos du header de la page (titre et fil d'ariane si nécessaire)
         vm.header = {
-            title: "Les Brasseurs 2017",
+            title: "Les Brasseurs 2018",
             breadcrumb: [
                 { state: "home", title: "Accueil" },
                 { state: 'programme', title: 'Programme' }
@@ -27,7 +27,7 @@
         /////////////////
 
         function activate() {
-            getEditionDetails(2017)
+            getEditionDetails(2018)
                 .then(function (edition) {
                     return edition.key();
                 })
