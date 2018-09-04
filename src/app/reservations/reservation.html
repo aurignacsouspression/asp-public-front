@@ -3,10 +3,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-uppercase">En 2017, on mange « <strong>Brasil</strong> » !</h2>
+            <h2 class="text-uppercase">En 2018, c'est repas « <strong>Vintage</strong> » !</h2>
             <p>
-                Comme en 2015 et 2016, nous vous proposons cette année <strong>2 plats au choix</strong>, que ce soit
-                le samedi ou le dimanche. Ces plats sont accompagnés du fromage, d'un dessert (au choix lui aussi), et du café, le tout pour <strong>15€</strong>, prix inchangé par rapport aux années précédentes. Et comme toujours, <strong>les places sont limitées</strong>.
+                Comme chaque année, nous vous proposons <strong>2 plats au choix</strong>, que ce soit
+                le samedi ou le dimanche. Ces plats sont accompagnés du fromage, d'un dessert (au choix lui aussi), et du café, le tout pour <strong>16€</strong>. Et comme toujours, <strong>les places sont limitées</strong>.
             </p>
             <br>
         </div>
@@ -24,7 +24,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <p>2 plats typiques du Brésil, testés et approuvés, vous seront proposés durant ces deux jours :</p>
+                    <p>2 plats typiques de l'époque guinguette et des années 50, testés et approuvés, vous seront proposés durant ces deux jours :</p>
                     <ul class="list list-icons list-icons-sm">
                         <li ng-repeat="meal in resa.meals"><i class="fa fa-caret-right"></i><strong>{{ ::meal }}</strong></li>
                     </ul>
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <div class="row visible-xs-block visible-sm-block mt-md"></div>
             <div class="row">
                 <div class="col-md-5">
@@ -49,17 +49,17 @@
                         <li><i class="fa fa-caret-right"></i><strong>Tarte à la banane meringuée</strong></li>
                         <li><i class="fa fa-caret-right"></i><strong>« Le brésilien » (gâteau au café)</strong></li>
                     </ul>
-                    <!-- <p>Nous n'avons pas encore tranché concernant les desserts, mais les infos seront disponibles dès les réservations ouvertes :)</p> -->
+                    <p>Nous n'avons pas encore tranché concernant les desserts, mais les infos seront disponibles dès les réservations ouvertes :)</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <div class="row">
         <div class="col-md-9">
             <br>
-            <p>Le samedi soir, vous pourrez profiter après votre repas d'un concert <i>saaaaaamba</i> avec le
-                bien nommé groupe <strong>Samba Color</strong>, tandis que le dimanche sera animé par Michel Devaux sur des rythmes <i>bossa nova</i>, ainsi que par le spectable-revue <strong>« Samba Show »</strong> de la compagnie <strong>Meu Brasil</strong>.</p>
+            <p>Le samedi soir, vous pourrez profiter après votre repas d'un concert <i>rockabilly</i> avec le
+                bien nommé groupe <strong>Rocking Billies</strong>, tandis que le dimanche sera rythmé par de multiples animations musicales <i>fifties</i>.</p>
         </div>
         <div class="col-md-3">
             <a ui-sref="programme" class="btn btn-md mt-lg btn-primary">Le programme complet</a>
@@ -73,30 +73,30 @@
 
     <div class="row">
         <div class="col-md-12">
-            <!-- <h2 class="text-uppercase"><strong>Réserver</strong></h2> -->
-            <h2 class="text-uppercase"><strong>Réserver</strong> (dernières places)</h2>
+            <h2 class="text-uppercase"><strong>Réserver</strong></h2>
+            <!-- <h2 class="text-uppercase"><strong>Réserver</strong> (dernières places)</h2> -->
             <!-- <p>Les réservations ne sont pas encore ouvertes, vous pouvez vous inscrire à notre newsletter ci-dessous ou nous suivre sur Facebook pour être tenu(e) au courant :)</p> -->
             <!-- <p>Première solution pour réserver les dernières places disponibles : vous pouvez vous rendre à <a href="http://www.tourisme-aurignac.com/"
                 title="Site internet de l'Office de Tourisme" target="_blank">l'Office de Tourisme des Terres d'Aurignac</a>.
                 Seconde solution, <strong>directement en ligne via Paypal</strong>, ci-dessous :</p> -->
-            <p>Vous pouvez réserver les toutes dernières places <strong>directement en ligne via Paypal</strong> ci-dessous, ou si vous êtes joueur rendez-vous sur place, mais sans garantie de disponibilité ;)</p>
-            <!-- <p>Comme d'habitude, deux possibilités s'offrent à vous pour réserver les repas. Première solution, via <a href="http://www.tourisme-aurignac.com/"
-                    title="Site internet de l'Office de Tourisme" target="_blank">l'Office
-                de Tourisme des Terres d'Aurignac</a> : vous pouvez soit vous rendre sur place (Avenue de Boulogne, 31420 Aurignac) soit renvoyer l'un des deux (ou les deux) formulaires suivants, accompagné(s) d'un chèque correspondant au montant total des repas.
+            <!-- <p>Vous pouvez réserver les toutes dernières places <strong>directement en ligne via Paypal</strong> ci-dessous, ou si vous êtes joueur rendez-vous sur place, mais sans garantie de disponibilité ;)</p> -->
+            <p>Comme d'habitude, deux possibilités s'offrent à vous pour réserver les repas. Première solution, via <a href="https://www.tourisme-stgaudens.com/contact/"
+                    title="Bureau d'Information Touristique d'Aurignac" target="_blank">l'Office
+                de Tourisme</a> : vous pouvez soit vous rendre sur place (Avenue de Boulogne, 31420 Aurignac) soit renvoyer l'un des deux (ou les deux) formulaires suivants, accompagné(s) d'un chèque correspondant au montant total des repas.
                 <ul class="list list-icons list-icons-sm">
                     <li ng-if="!resa.repas[0].disabled">
-                        <i class="fa fa-caret-right"></i><a href="assets/Aurignac sous pression - Bulletin d'inscription au repas du 7 octobre 2017.pdf"
-                            target="_blank">Bulletin d'inscription au repas du samedi soir 7 octobre</a>
+                        <i class="fa fa-caret-right"></i><a href="assets/Aurignac sous pression - Bulletin d'inscription au repas du 6 octobre 2018.pdf"
+                            target="_blank">Bulletin d'inscription au repas du samedi soir 6 octobre</a>
                     </li>
                     <li ng-if="!resa.repas[1].disabled">
-                        <i class="fa fa-caret-right"></i><a href="assets/Aurignac sous pression - Bulletin d'inscription au repas du 8 octobre 2017.pdf"
-                            target="_blank">Bulletin d'inscription au repas du dimanche midi 8 octobre</a>
+                        <i class="fa fa-caret-right"></i><a href="assets/Aurignac sous pression - Bulletin d'inscription au repas du 7 octobre 2018.pdf"
+                            target="_blank">Bulletin d'inscription au repas du dimanche midi 7 octobre</a>
                     </li>
                 </ul>
             </p>
             <p>
                 Seconde solution pour réserver vos repas, <strong>directement en ligne via Paypal</strong>, ci-dessous :
-            </p> -->
+            </p>
         </div>
     </div>
 
@@ -106,7 +106,7 @@
                 <div class="box-content">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2>Repas du samedi soir : 15€</h2>
+                            <h2>Repas du samedi soir : 16€</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -139,7 +139,7 @@
                 <div class="box-content">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2>Repas du dimanche midi : 15€</h2>
+                            <h2>Repas du dimanche midi : 16€</h2>
                         </div>
                     </div>
                     <div class="row">

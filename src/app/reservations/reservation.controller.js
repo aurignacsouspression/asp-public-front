@@ -18,8 +18,8 @@
         };
 
         vm.meals = [
-            "« Feijoada » : le plat national brésilien, à base de haricots noirs et viande de porc salée",
-            "« Frango churrasco » : poulet braisé façon brésilienne avec sa tarte aux légumes fondants"
+            "« Poule au pot » : une recette emblématique des guinguettes d'autrefois",
+            "« Jambon à la ficelle » : cuit pendant de longues heures, et accompagné de son gratin dauphinois"
         ];
 
         vm.repas = [
@@ -27,16 +27,16 @@
                 sku: "001",
                 name: "Repas du samedi soir",
                 quantity: 0,
-                price: 15,
+                price: 16,
                 meals: [0, 0],
-                disabled: true
+                disabled: false
             }, {
                 sku: "002",
                 name: "Repas du dimanche midi",
                 quantity: 0,
-                price: 15,
+                price: 16,
                 meals: [0, 0],
-                disabled: true
+                disabled: false
             }
         ];
 
@@ -139,7 +139,7 @@
             configurable: false,
             get: function () {
                 if (this.repas) {
-                    return parseFloat((0.25 + (this.repas[0].quantity + this.repas[1].quantity) * 15 * 0.034).toFixed(2));
+                    return parseFloat((0.25 + (this.repas[0].quantity + this.repas[1].quantity) * 16 * 0.034).toFixed(2));
                 }
             }
         });
