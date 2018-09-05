@@ -38,7 +38,7 @@
             '<strong>Jeux bikers</strong> (course de lenteur, concours de bras de fer…) avec nombreux lots à gagner !',
             "<strong>Zone d'expo-vente de motos customs et voitures américaines</strong> réservée aux particuliers",
             "Exposition de voitures (rassemblement au foirail d'Aurignac à 10h00) et motos collectors",
-            'Rassemblement de <strong>nombreuses 2CV</strong> pour les 70 ans de notre voiture mythique, avec animations-challenges : faire rentrer 22 personnes dans une seule 2CV et démonter/remonter une 2CV en « live » !',
+            'Rassemblement de <strong>nombreuses 2CV</strong> pour les 70 ans de notre voiture mythique',
             "Comme le samedi, <strong>repas vintage avec 2 menus plat-dessert au choix</strong> le midi (sur réservation, places limitées là aussi !).",
             "Animations musicales <strong>fifties</strong>",
             "Circuits balades libres pour les motards et animations sécurité routière",
