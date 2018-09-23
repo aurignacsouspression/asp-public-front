@@ -127,7 +127,14 @@
                 controller: "PresentationController",
                 controllerAs: "presentation",
                 data: { pageTitle: "A propos" }
-             });
+            })
+            .state("confidentialite", {
+                url: "/confidentialite",
+                templateUrl: "app/policy/policy.html",
+                controller: "PolicyController",
+                controllerAs: "policy",
+                data: { pageTitle: "Mentions légales" }
+            });
 
             $urlRouterProvider.otherwise("/");
     }
