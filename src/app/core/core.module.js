@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    paypal.Button.driver('angular', window.angular);
+    paypal.Buttons.driver('angular', window.angular);
 
     angular
         .module('aurignac.core', [
@@ -14,7 +14,7 @@
             "ngMap",
             "angulartics",
             "angulartics.google.analytics",
-            "paypal-button"
+            "paypal-buttons"
         ])
 
         // .constant("FIREBASE_URL", "https://aurignacsouspression.firebaseio.com/")

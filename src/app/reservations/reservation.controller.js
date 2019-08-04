@@ -5,8 +5,8 @@
         .module("aurignac")
         .controller("ReservationController", ReservationController);
 
-    ReservationController.$inject = ["api", "$state"];
-    function ReservationController(api, $state) {
+    ReservationController.$inject = ["$state", "usSpinnerService"];
+    function ReservationController($state, usSpinnerService) {
         var vm = this;
         vm.addRepas = addRepas;
         vm.removeRepas = removeRepas;
@@ -67,12 +67,18 @@
         }
 
         function checkout() {
+            function generateAmout(value) {
+                return {
+                    value: value.toString(),
+                    currency_code: 'EUR'
+                }
+            }
+
             var parsedData = [{
                 sku: "0000",
                 name: "Frais Paypal",
                 quantity: "1",
-                price: vm.paypalAmount.toString(),
-                currency: "EUR"
+                unit_amount: generateAmout(vm.paypalAmount)
             }];
 
             vm.repas.forEach(function (day, index) {
@@ -82,50 +88,52 @@
                             sku: day.sku + quantityIndex,
                             name: day.name + ' - ' + vm.meals[quantityIndex],
                             quantity: quantity.toString(),
-                            price: day.price.toString(),
-                            currency: "EUR"
+                            unit_amount: generateAmout(day.price)
                         });
                     }
                 });
             });
 
-            var transactions = [{
-                item_list: {
-                    items: parsedData
-                },
-                amount: {
-                    currency: "EUR",
-                    total: (vm.repas[0].quantity * vm.repas[0].price + vm.repas[1].quantity * vm.repas[1].price + vm.paypalAmount).toString()
-                },
+            var total = generateAmout(
+                vm.repas[0].quantity * vm.repas[0].price + vm.repas[1].quantity * vm.repas[1].price + vm.paypalAmount
+            );
+
+            var purchase_units = [{
+                items: parsedData,
+                amount: Object.assign(
+                    {},
+                    total,
+                    { breakdown: { item_total: total } }
+                ),
                 description: "Repas Aurignac Sous Pression"
             }];
 
-            return transactions;
+            return purchase_units;
             // return api.approvePaypal(transactions);
         }
 
         function paypalOptions() {
             return {
-                // env: 'sandbox', // Or 'sandbox'
-                env: 'production', // Or 'sandbox'
-
-                client: {
-                    sandbox: 'AZ6312n_7yJY-KRiRQ5XNSnWR4EBmYQgJ1WY1LyC1SLWFuE6ljVM92JBlbI0v3pT7DtvoFl1tfKAGTQM',
-                    production: 'Aap-rFAyPgwgDHm02iBmIYjwjyDmcRcEbXeacaKIrTMH1cFtbtNmfZLgfdhLBHTBcxvxxjcvdYH_84tz'
+                style: {
+                    color: 'black',
+                    label: 'pay',
+                    tagline: false,
+                    height: 40
                 },
 
-                commit: true, // Show a 'Pay Now' button
-
-                payment: function (data, actions) {
-                    return actions.payment.create({
-                        payment: {
-                            transactions: checkout()
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: checkout(),
+                        application_context: {
+                            shipping_preference: 'NO_SHIPPING'
                         }
                     });
                 },
 
-                onAuthorize: function (data, actions) {
-                    return actions.payment.execute().then(function (payment) {
+                onApprove: function (data, actions) {
+                    usSpinnerService.spin('overlay');
+                    return actions.order.capture().then(function (payment) {
+                        usSpinnerService.stop('overlay');
                         $state.go('confirmation');
                     });
                 }
@@ -139,7 +147,7 @@
             configurable: false,
             get: function () {
                 if (this.repas) {
-                    return parseFloat((0.25 + (this.repas[0].quantity + this.repas[1].quantity) * 16 * 0.034).toFixed(2));
+                    return parseFloat((0.35 + (this.repas[0].quantity + this.repas[1].quantity) * 16 * 0.029).toFixed(2));
                 }
             }
         });

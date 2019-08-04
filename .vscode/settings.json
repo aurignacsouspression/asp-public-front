@@ -14,7 +14,12 @@
     "javascript.validate.lint.unusedFunctions": "warning",
 
     "files.exclude": {
-		"build/": true,
         ".tmp/": true
-	}
+    },
+
+    "search.exclude": {
+        "build/": true,
+        "**/node_modules": true,
+        "**/bower_components": true
+    }
 }

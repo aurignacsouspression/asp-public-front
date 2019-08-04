@@ -199,6 +199,11 @@ gulp.task('optimize', ['inject', 'templatecache'], function() {
  */
 gulp.task('build', ['optimize', 'images', 'assets', 'fonts'], function() {
     log('Building everything');
+
+    const paypalScript = 'https://www.paypal.com/sdk/js?currency=EUR&client-id=Aap-rFAyPgwgDHm02iBmIYjwjyDmcRcEbXeacaKIrTMH1cFtbtNmfZLgfdhLBHTBcxvxxjcvdYH_84tz';
+    return gulp.src(config.build + 'index.html')
+        .pipe($.replace(/<!-- head:paypal -->[\s\S]*<!-- end:head:paypal -->/, `<script src="${paypalScript}"></script>`))
+        .pipe(gulp.dest(config.build));
 });
 
 /**

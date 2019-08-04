@@ -151,3 +151,20 @@ ul.condensed {
 .mfp-with-zoom.mfp-removing.mfp-bg {
     opacity: 0;
 }
+
+/***** OVERLAY SPINNER *****/
+.us-spinner-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1000;
+    background: none;
+    transition: background 0.1s ease;
+    pointer-events: none;
+}
+
+.us-spinner-wrapper.loading {
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.6);
+}

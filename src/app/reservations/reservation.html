@@ -178,18 +178,12 @@
                 <div ng-repeat="meal in resa.meals">- {{ ::meal }} : <strong>{{ repas.meals[$index] }}</strong></div>
             </div>
 
-            <div><i>Frais Paypal (3,4% + 0.25€) : {{ resa.paypalAmount }}€</i></div>
+            <div><i>Frais Paypal (2,90% + 0.35€) : {{ resa.paypalAmount }}€</i></div>
             <div><strong>TOTAL : {{ resa.repas[0].quantity * resa.repas[0].price + resa.repas[1].quantity * resa.repas[1].price + resa.paypalAmount }}€</strong></div>
 
-            <div style="margin-top: 25px; margin-bottom: 20px;">
+            <div style="margin-top: 25px; margin-bottom: 20px; max-width: 200px; margin-left:auto; margin-right:0;">
                 <div id="t1">
-                    <paypal-button
-                        env="resa.paypal.env"
-                        client="resa.paypal.client"
-                        payment="resa.paypal.payment"
-                        commit="resa.paypal.commit"
-                        on-authorize="resa.paypal.onAuthorize">
-                    </paypal-button>
+                    <paypal-buttons props="resa.paypal"></paypal-buttons>
                 </div>
             </div>
         </div>
@@ -197,7 +191,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <p><i><strong>A savoir</strong> : Paypal nous impose des frais qui s'élèvent à 3,4% + 0,25€ par transaction que nous ne pouvons pas nous permettre de prendre à notre charge étant donné le budget de notre association.
+            <p><i><strong>A savoir</strong> : Paypal nous impose des frais qui s'élèvent à 2,90% + 0,35€ par transaction que nous ne pouvons pas nous permettre de prendre à notre charge étant donné le budget de notre association.
             Ces frais vous sont donc répercutés et indiqués au niveau du montant total. Evidemment en cas de paiement à l'Office de Tourisme par chèque ou liquide, ces frais ne sont pas applicables.</i></p>
         </div>
     </div>
