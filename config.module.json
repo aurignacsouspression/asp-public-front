@@ -7,8 +7,8 @@
   },
   "production": {
     "FIREBASE_URL": "https://aurignacsouspression.firebaseio.com/",
-    "CDN_IMAGES": "http://cdn.aurignacsouspression.fr/img/",
-    "PAYPAL_RETURN_URL": "http://www.aurignacsouspression.fr/paiement",
-    "PAYPAL_CANCEL_URL": "http://www.aurignacsouspression.fr/reservation"
+    "CDN_IMAGES": "https://cdn.aurignacsouspression.fr/img/",
+    "PAYPAL_RETURN_URL": "https://www.aurignacsouspression.fr/paiement",
+    "PAYPAL_CANCEL_URL": "https://www.aurignacsouspression.fr/reservation"
   }
 }
