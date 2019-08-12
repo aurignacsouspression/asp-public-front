@@ -33,7 +33,7 @@
         ];
 
         vm.dimanche = [
-            '<a href="brassage">Brassage public participatif</a> (inscription obligatoire, places limitées)',
+            // '<a href="brassage">Brassage public participatif</a> (inscription obligatoire, places limitées)',
             '<a href="bike-contest">Bike Contest</a>, ouvert à tous les possesseurs de motos customs',
             '<strong>Jeux bikers</strong> (course de lenteur, concours de bras de fer…) avec nombreux lots à gagner !',
             "<strong>Zone d'expo-vente de motos customs et voitures américaines</strong> réservée aux particuliers",
