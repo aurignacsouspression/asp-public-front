@@ -102,7 +102,7 @@
                         $timeout(function () {
                             $rootScope.title = prefix
                                 ? prefix + " - Aurignac Sous Pression"
-                                : "Aurignac Sous Pression - 6 et 7 octobre 2018";
+                                : "Aurignac Sous Pression - 5 et 6 octobre 2019";
                         });
                     });
             }
