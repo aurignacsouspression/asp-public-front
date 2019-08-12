@@ -18,8 +18,8 @@
         };
 
         vm.meals = [
-            "« Poule au pot » : une recette emblématique des guinguettes d'autrefois",
-            "« Jambon à la ficelle » : cuit pendant de longues heures, et accompagné de son gratin dauphinois"
+            "« Ribs de Porc et Riz façon Jambalaya » : un incontournable du pays de l'oncle Sam !",
+            '« Chilli con Carne » : pour ceux qui aiment le "spicy" et/ou se rêvent cowboy au Texas'
         ];
 
         vm.repas = [
@@ -29,14 +29,14 @@
                 quantity: 0,
                 price: 16,
                 meals: [0, 0],
-                disabled: true
+                disabled: false
             }, {
                 sku: "002",
                 name: "Repas du dimanche midi",
                 quantity: 0,
                 price: 16,
                 meals: [0, 0],
-                disabled: true
+                disabled: false
             }
         ];
 
