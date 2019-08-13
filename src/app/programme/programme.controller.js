@@ -26,23 +26,25 @@
         // ];
 
         vm.samedi = [
-            "Pour la première fois : <strong>DJ contest</strong>",
-            "<strong>Apéritif musical</strong> « France des fifties » et première partie avec « Mystère Daoud »",
-            "<strong>Repas vintage avec menus plat-dessert-café au choix</strong> (sur réservation, places limitées).",
-            "<strong>Concert rockabilly</strong> avec le groupe <strong>« Rocking Billies » en deuxième partie de soirée</strong>."
+            'Pour la première fois : <b>restauration sans réservation à partir de midi</b>, avec wings de poulet ou basse-côte et frites',
+            "<strong>DJ contest, Vinyle Attitude et Life Street Art</strong> de 14h à 18h",
+            "<strong>Apéritif musical</strong> à partir de 18h30 et première partie avec « <b>Stac</b> »",
+            'Le soir, <b>repas « 69 » avec menus plat-dessert-café</b> au choix (<a href="reservation" title="Réservez vos repas dès à présent">sur réservation</a>, places limitées)',
+            "<strong>Concert</strong> avec le groupe <strong>« Woodstock Generation »</strong> à partir de 22h30"
         ];
 
         vm.dimanche = [
             // '<a href="brassage">Brassage public participatif</a> (inscription obligatoire, places limitées)',
-            '<a href="bike-contest">Bike Contest</a>, ouvert à tous les possesseurs de motos customs',
-            '<strong>Jeux bikers</strong> (course de lenteur, concours de bras de fer…) avec nombreux lots à gagner !',
-            "<strong>Zone d'expo-vente de motos customs et voitures américaines</strong> réservée aux particuliers",
-            "Exposition de voitures (rassemblement au foirail d'Aurignac à 10h00) et motos collectors",
-            'Rassemblement de <strong>nombreuses 2CV</strong> pour les 70 ans de notre voiture mythique',
-            "Comme le samedi, <strong>repas vintage avec 2 menus plat-dessert au choix</strong> le midi (sur réservation, places limitées là aussi !).",
-            "Animations musicales <strong>fifties</strong>",
+            // '<a href="bike-contest">Bike Contest</a>, ouvert à tous les possesseurs de motos customs',
+            '<b>Bike Contest</b> ouvert à tous les possesseurs de motos customs et <strong>jeux bikers</strong> (course de lenteur, concours de bras de fer…) avec nombreux lots à gagner !',
+            "Zone d'<b>expo-vente</b> de motos customs et voitures américaines réservée aux particuliers",
+            "Exposition de <b>voitures</b> (rassemblement place de la mairie d'Aurignac à 10h) et <b>motos collectors</b>",
+            '<b>Rassemblement de MINI</b> pour leur 60ème anniversaire et d’autres <b>voitures symboles des années hippies</b> (4L, Méhari, Cox, Combi,…)',
+            '<b>Apéritif musical</b> à partir de 11h avec « <b>Stac</b> »',
+            'Le midi, <b>repas « 69 » avec menus plat-dessert-café</b> au choix (<a href="reservation" title="Réservez vos repas dès à présent">sur réservation</a>, places limitées)',
+            "Concert <b>Tribute to Deep Purple</b> à partir de 14h30 avec « <b>Deep Impact</b> »",
             "Circuits balades libres pour les motards et animations sécurité routière",
-            "Résultats du <strong>concours de bière</strong> officiel d'Aurignac Sous Pression 2018 et remise du <strong>brassin d'or</strong> à la bière préférée du public"
+            "À 17h, résultats du <strong>concours de bière</strong> officiel d'Aurignac Sous Pression 2019 et remise du <strong>brassin d'or</strong> à la bière préférée du public"
         ];
 
         vm.onload = onLoad;
