@@ -68,7 +68,13 @@
                 templateUrl: "app/reservations/confirmation.html",
                 data: { pageTitle: "Réservation confirmée" }
             })
-
+            .state("shop", {
+                url: "/shop",
+                controller: "ShopController",
+                controllerAs: "shop",
+                templateUrl: "app/shop/shop.html",
+                data: { pageTitle: "Boutique" }
+            })
 //             .state("presse", {
 //                 url: "/presse",
 //                 controller: "ArticlesController",
