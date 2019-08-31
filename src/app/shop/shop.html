@@ -13,52 +13,62 @@
 
     <div class="row">
         <div class="col-md-9 shop-items">
-            <div class="shop-item">
-                <img class="visual" src="img/2019/shirt.png" alt="">
+            <div class="shop-item" ng-repeat="item in shop.tshirts">
+                <div asp-magnific-popup>
+                    <a ng-href="{{item.img}}">
+                        <img class="visual" ng-src="{{item.img}}" alt="">
+                    </a>
+                </div>
                 <div class="item-infos">
-                    <div class="row">
-
-                    </div>
-                    <div class="item-name">
-                        Modèle 1
+                    <div class="item-header">
+                        <h5>{{item.name}}</h5>
+                        <h5>{{item.price}}€</h5>
                     </div>
                     <!-- <div class="item-description">
-
                     </div> -->
-                    <div class="item-price">12€</div>
-                    <div class="item-quantity"></div>
+                    <div class="item-actions">
+                        <div class="item-size">
+                            Taille :
+                            <select name="sizeSelect" id="sizeSelect" ng-model="item.selectedSize">
+                                <option ng-repeat="size in shop.sizes" value="{{size.id}}">{{size.display}}</option>
+                            </select>
+                        </div>
+                        <div class="item-add">
+                            <button class="btn btn-primary btn-sm" ng-click="shop.addToCart(item)">Ajouter</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="shop-item">
-                <img class="visual" src="img/2019/shirt.png" alt="">
-                <div class="infos"></div>
-            </div>
-            <div class="shop-item">
-                <img class="visual" src="img/2019/shirt.png" alt="">
-                <div class="infos"></div>
-            </div>
-            <div class="shop-item">
-                <img class="visual" src="img/2019/shirt.png" alt="">
-                <div class="infos"></div>
-            </div>
-            <div class="shop-item">
-                <img class="visual" src="img/2019/shirt.png" alt="">
-                <div class="infos"></div>
-            </div>
-            <div class="shop-item">
-                <img class="visual" src="img/2019/shirt.png" alt="">
-                <div class="infos"></div>
-            </div>
-            <div class="shop-item">
-                <img class="visual" src="img/2019/shirt.png" alt="">
-                <div class="infos"></div>
-            </div>
-            <!-- <div class="shop-item">
-                <img class="visual" src="img/2019/shirt.png" alt="">
-            </div> -->
         </div>
-        <div class="col-md-3 hidden-sm">
-            Cart
+
+        <div class="col-md-3 cart">
+            <h4 class="text-uppercase">Panier</h4>
+            <div ng-show="!shop.cart.length">Votre panier est vide</div>
+
+            <div ng-show="shop.cart.length">
+                <div class="cart-item" ng-repeat="item in shop.cart">
+                    <div class="cart-item-description">
+                        <div class="cart-item-name">
+                            <h5>{{item.name}}</h5>
+                            <i class="fa fa-times" title="Supprimer" ng-click="shop.removeItemFromCart($index)"></i>
+                        </div>
+                        <div class="cart-item-size">{{shop.getSizeName(item.size)}}</div>
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-quantity">Quantité : {{item.quantity}}</div>
+                        <div class="cart-item-price">{{item.price * item.quantity}}€</div>
+                    </div>
+                </div>
+
+                <div class="cart-total">
+                    <div><i>Frais Paypal (2,90% + 0.35€) : {{ shop.paypalAmount }}€</i></div>
+                    <div><strong>TOTAL : {{ shop.totalAmount }}€</strong></div>
+
+                    <div class="cart-paypal">
+                        <paypal-buttons props="shop.paypal"></paypal-buttons>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
