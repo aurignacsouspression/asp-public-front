@@ -2,70 +2,115 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h2 class="text-uppercase">T-shirts en édition limitée</h2>
-            <p>
-                Pour la première fois cette année, des t-shirts Aurignac Sous Pression en <b>édition limitée « 50 ans Woodstock »</b> sont disponibles à l'achat en ligne. Vous pourrez ensuite les retirer sur place durant le weekend des 5 et 6 octobre.
-            </p>
-            <p><b>Seuls les t-shirts commandés sur cette page avant le 12 septembre pourront être retirés durant le weekend.</b></p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-9 shop-items">
-            <div class="shop-item" ng-repeat="item in shop.tshirts">
-                <div asp-magnific-popup>
-                    <a ng-href="{{item.img}}">
-                        <img class="visual" ng-src="{{item.img}}" alt="">
-                    </a>
-                </div>
-                <div class="item-infos">
-                    <div class="item-header">
-                        <h5>{{item.name}}</h5>
-                        <h5>{{item.price}}€</h5>
+        <div class="col-md-9">
+            <div class="shop-items">
+                <div id="tee-shirts" class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-uppercase">T-shirts</h2>
+                        <p>
+                            Pour la première fois cette année, des t-shirts Aurignac Sous Pression en <b>édition limitée « 50 ans Woodstock »</b> sont disponibles à l'achat en ligne. Vous pourrez ensuite les retirer sur place durant le weekend des 5 et 6 octobre.
+                        </p>
+                        <p><b>Seuls les t-shirts commandés sur cette page avant le 29 septembre pourront être retirés durant le weekend, et ne sont ni échangeables ni remboursables.</b></p>
+                        <p><a href="assets/shop/tee-sizes.pdf" target="_blank">Le guide des tailles et des coupes est disponible en cliquant ici</a></p>
                     </div>
-                    <!-- <div class="item-description">
-                    </div> -->
-                    <div class="item-actions">
-                        <div class="item-size">
-                            Taille :
-                            <select name="sizeSelect" id="sizeSelect" ng-model="item.selectedSize">
-                                <option ng-repeat="size in shop.sizes" value="{{size.id}}">{{size.display}}</option>
-                            </select>
+                </div>
+
+                <div class="shop-item" ng-repeat="item in shop.tshirts">
+                    <div asp-magnific-popup data-gallery="true">
+                        <a ng-href="assets/shop/{{item.sku}}_M-Front.jpg" target="_self">
+                            <img class="visual" ng-src="assets/shop/{{item.sku}}_T.jpg" alt="">
+                        </a>
+                        <a ng-href="assets/shop/{{item.sku}}_M-Back.jpg"  target="_self" style="display: none"></a>
+                        <a ng-href="assets/shop/{{item.sku}}_F-Front.jpg" target="_self" style="display: none"></a>
+                        <a ng-href="assets/shop/{{item.sku}}_F-Back.jpg"  target="_self" style="display: none"></a>
+                    </div>
+                    <div class="item-infos">
+                        <div class="item-header">
+                            <h5>{{item.name}}</h5>
+                            <h5>{{item.price}}€</h5>
                         </div>
-                        <div class="item-add">
-                            <button class="btn btn-primary btn-sm" ng-click="shop.addToCart(item)">Ajouter</button>
+                        <div ng-if="item.description" class="item-description">
+                            {{item.description}}
+                        </div>
+                        <div class="item-actions">
+                            <div class="item-size">
+                                Taille :
+                                <select name="sizeSelect" id="sizeSelect" ng-model="item.selectedSize">
+                                    <option ng-repeat="size in shop.sizes" value="{{size.id}}">{{size.display}}</option>
+                                </select>
+                            </div>
+                            <div class="item-add">
+                                <button class="btn btn-primary btn-sm" ng-click="shop.addToCart(item)">Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shop-items">
+                <div id="whisky" class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-uppercase">Whisky</h2>
+                        <p>
+                            Le marque de whisky <b>Black Mountain</b> vous propose à l'occasion d'Aurignac Sous Pression 2019 une édition spéciale adaptée au thème de cette année, les 50 ans de Woodstock ! Vous pouvez réserver ci-dessous votre bouteille pour 10€, et la retirer ensuite lors du weekend. <b>Attention nombre limité !</b>
+                        </p>
+                        <p style="font-style: italic">Les 10€ seront déduits du prix total de 35€ et reversés intégralement à Black Mountain, l'association Aurignac Sous Pression ne vendant elle-même aucun alcool "fort".</p>
+                    </div>
+                </div>
+
+                <div class="shop-item">
+                    <div asp-magnific-popup>
+                        <a ng-href="assets/shop/{{shop.whisky.sku}}.jpg" target="_self">
+                            <img class="visual" ng-src="assets/shop/{{shop.whisky.sku}}_T.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="item-infos">
+                        <div class="item-header">
+                            <h5>{{shop.whisky.name}}</h5>
+                            <h5>{{shop.whisky.price}}€</h5>
+                        </div>
+                        <div class="item-description">
+                            <b>Prix total : 35€.</b> Volume : 50 cl. Edition spéciale "50 ans Woodstock" avec Finition Fut de Bière. Les 25€ restants seront à payer au moment du retrait.
+                        </div>
+                        <div class="item-actions">
+                            <div class="item-size">
+                            </div>
+                            <div class="item-add">
+                                <button class="btn btn-primary btn-sm" ng-click="shop.addToCart(shop.whisky)">Ajouter</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-3 cart">
-            <h4 class="text-uppercase">Panier</h4>
-            <div ng-show="!shop.cart.length">Votre panier est vide</div>
+        <div class="col-md-3">
+            <div class="cart">
+                <h2 class="text-uppercase">Panier</h2>
+                <div ng-show="!shop.cart.length">Votre panier est vide</div>
 
-            <div ng-show="shop.cart.length">
-                <div class="cart-item" ng-repeat="item in shop.cart">
-                    <div class="cart-item-description">
-                        <div class="cart-item-name">
-                            <h5>{{item.name}}</h5>
-                            <i class="fa fa-times" title="Supprimer" ng-click="shop.removeItemFromCart($index)"></i>
+                <div ng-show="shop.cart.length">
+                    <div class="cart-item" ng-repeat="item in shop.cart">
+                        <div class="cart-item-description">
+                            <div class="cart-item-name">
+                                <h5>{{item.name}}</h5>
+                                <i class="fa fa-times" title="Supprimer" ng-click="shop.removeItemFromCart($index)"></i>
+                            </div>
+                            <div ng-if="item.size" class="cart-item-size">{{shop.getSizeName(item.size)}}</div>
                         </div>
-                        <div class="cart-item-size">{{shop.getSizeName(item.size)}}</div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-quantity">Quantité : {{item.quantity}}</div>
+                            <div class="cart-item-price">{{item.price * item.quantity}}€</div>
+                        </div>
                     </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-quantity">Quantité : {{item.quantity}}</div>
-                        <div class="cart-item-price">{{item.price * item.quantity}}€</div>
-                    </div>
-                </div>
 
-                <div class="cart-total">
-                    <div><i>Frais Paypal (2,90% + 0.35€) : {{ shop.paypalAmount }}€</i></div>
-                    <div><strong>TOTAL : {{ shop.totalAmount }}€</strong></div>
+                    <div class="cart-total">
+                        <div><i>Frais Paypal (2,90% + 0.35€) : {{ shop.paypalAmount }}€</i></div>
+                        <div><strong>TOTAL : {{ shop.totalAmount }}€</strong></div>
 
-                    <div class="cart-paypal">
-                        <paypal-buttons props="shop.paypal"></paypal-buttons>
+                        <div class="cart-paypal">
+                            <paypal-buttons props="shop.paypal"></paypal-buttons>
+                        </div>
                     </div>
                 </div>
             </div>

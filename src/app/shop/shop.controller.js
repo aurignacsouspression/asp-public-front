@@ -19,63 +19,107 @@
             // breadcrumb: [{link: "/", class: "active", title: "Accueil"}]
         };
 
+        vm.whisky = {
+            sku: "WHISKY_BM",
+            name: "Whisky Black Mountain",
+            price: 10,
+        };
+
         var defaultSize = "10";
+        var defaultTreePrice = 15;
         vm.tshirts = [
             {
-                sku: "TEE_1",
-                name: "Modèle 1",
-                price: 12,
+                sku: "TEE_1_BLANC",
+                name: "Modèle 1 - Blanc",
+                price: defaultTreePrice,
                 selectedSize: defaultSize,
-                img: 'img/2019/shirt.png'
             },
             {
-                sku: "TEE_2",
-                name: "Modèle 2",
-                price: 12,
+                sku: "TEE_1_NOIR",
+                name: "Modèle 1 - Noir",
+                price: defaultTreePrice,
                 selectedSize: defaultSize,
-                img: 'img/2019/shirt.png'
             },
             {
-                sku: "TEE_3",
-                name: "Modèle 3",
-                price: 12,
+                sku: "TEE_2_BLANC",
+                name: "Modèle 2 - Blanc",
+                price: defaultTreePrice,
                 selectedSize: defaultSize,
-                img: 'img/2019/shirt.png'
             },
             {
-                sku: "TEE_4",
-                name: "Modèle 4",
-                price: 12,
+                sku: "TEE_2_NOIR",
+                name: "Modèle 2 - Noir",
+                price: defaultTreePrice,
                 selectedSize: defaultSize,
-                img: 'img/2019/shirt.png'
+            },
+            {
+                sku: "TEE_3_BLANC",
+                name: "Modèle 3 - Blanc",
+                price: defaultTreePrice,
+                selectedSize: defaultSize,
+            },
+            {
+                sku: "TEE_3_NOIR",
+                name: "Modèle 3 - Noir",
+                price: defaultTreePrice,
+                selectedSize: defaultSize,
+            },
+            {
+                sku: "TEE_4_BLANC",
+                name: "Modèle 4 - Blanc",
+                price: defaultTreePrice,
+                selectedSize: defaultSize,
+            },
+            {
+                sku: "TEE_4_NOIR",
+                name: "Modèle 4 - Noir",
+                price: defaultTreePrice,
+                selectedSize: defaultSize,
             },
             {
                 sku: "TEE_5",
                 name: "Modèle 5",
-                price: 12,
+                price: defaultTreePrice,
                 selectedSize: defaultSize,
-                img: 'img/2019/shirt.png'
+                description: "Couleur gris chiné"
             },
             {
                 sku: "TEE_6",
                 name: "Modèle 6",
-                price: 12,
+                price: defaultTreePrice,
                 selectedSize: defaultSize,
-                img: 'img/2019/shirt.png'
+                description: "Couleur gris chiné"
             },
             {
-                sku: "TEE_7",
-                name: "Modèle 7",
-                price: 12,
+                sku: "TEE_7_BLANC",
+                name: "Modèle 7 - Blanc",
+                price: defaultTreePrice,
                 selectedSize: defaultSize,
-                img: 'img/2019/shirt.png'
             },
             {
-                sku: "TEE_8",
-                name: "Modèle 8",
-                price: 12,
+                sku: "TEE_7_NOIR",
+                name: "Modèle 7 - Noir",
+                price: defaultTreePrice,
                 selectedSize: defaultSize,
-                img: 'img/2019/shirt.png'
+            },
+            {
+                sku: "TEE_8_BLANC",
+                name: "Modèle 8 - Blanc",
+                price: defaultTreePrice,
+                selectedSize: defaultSize,
+            },
+            {
+                sku: "TEE_8_NOIR",
+                name: "Modèle 8 - Noir",
+                price: defaultTreePrice,
+                selectedSize: defaultSize,
+            },
+            {
+                sku: "TEE_9",
+                name: "Modèle 9",
+                price: defaultTreePrice,
+                selectedSize: defaultSize,
+                description: "Edition Black Mountain"
             }
         ];
 
@@ -97,21 +141,21 @@
         //////////////////////
 
         /**
-         * Add tee to cart
+         * Add item to cart
          */
-        function addToCart(tee) {
+        function addToCart(item) {
             var alreadyAdded = vm.cart
-                .find(function (t) { return t.sku === tee.sku && t.size === tee.selectedSize; });
+                .find(function (t) { return t.sku === item.sku && (t.size ? t.size === item.selectedSize : true); });
 
             if (alreadyAdded) {
                 alreadyAdded.quantity++;
             } else {
                 vm.cart.push({
-                    sku:      tee.sku,
-                    size:     tee.selectedSize,
+                    sku:      item.sku,
+                    size:     item.selectedSize,
                     quantity: 1,
-                    price:    tee.price,
-                    name:     tee.name
+                    price:    item.price,
+                    name:     item.name
                 });
             }
         }
@@ -126,8 +170,8 @@
         }
 
         function removeItemFromCart(index) {
-            const tee = vm.cart[index];
-            if (tee.quantity === 1) {
+            const item = vm.cart[index];
+            if (item.quantity === 1) {
                 vm.cart.splice(index, 1);
             } else {
                 vm.cart[index].quantity--;
@@ -149,12 +193,12 @@
                 unit_amount: generateAmout(vm.paypalAmount)
             }];
 
-            vm.cart.forEach(function (t) {
+            vm.cart.forEach(function (x) {
                 parsedData.push({
-                    sku:         t.sku,
-                    name:        t.name + ' - ' + getSizeName(t.size),
-                    quantity:    t.quantity.toString(),
-                    unit_amount: generateAmout(t.price)
+                    sku:         x.sku,
+                    name:        x.size ? x.name + ' - ' + getSizeName(x.size) : x.name,
+                    quantity:    x.quantity.toString(),
+                    unit_amount: generateAmout(x.price)
                 });
             });
 
@@ -197,7 +241,7 @@
                     usSpinnerService.spin('overlay');
                     return actions.order.capture().then(function (payment) {
                         usSpinnerService.stop('overlay');
-                        $state.go('confirmation');
+                        $state.go('shop-confirmation');
                     });
                 }
             }
