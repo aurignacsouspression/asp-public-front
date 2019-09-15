@@ -35,8 +35,7 @@
 
         vm.dimanche = [
             // '<a href="brassage">Brassage public participatif</a> (inscription obligatoire, places limitées)',
-            // '<a href="bike-contest">Bike Contest</a>, ouvert à tous les possesseurs de motos customs',
-            '<b>Bike Contest</b> ouvert à tous les possesseurs de motos customs et <strong>jeux bikers</strong> (course de lenteur, concours de bras de fer…) avec nombreux lots à gagner !',
+            '<a href="bike-contest"><b>Bike Contest</b></a> ouvert à tous les possesseurs de motos customs et <strong>jeux bikers</strong> (course de lenteur, concours de bras de fer…) avec nombreux lots à gagner !',
             "Zone d'<b>expo-vente</b> de motos customs et voitures américaines réservée aux particuliers",
             "Exposition de <b>voitures</b> (rassemblement place de la mairie d'Aurignac à 10h) et <b>motos collectors</b>",
             '<b>Rassemblement de MINI</b> pour leur 60ème anniversaire et d’autres <b>voitures symboles des années hippies</b> (4L, Méhari, Cox, Combi,…)',

@@ -30,16 +30,16 @@
                     data: { pageTitle: "Concours de bière" }
                 }
             },
-            {
-                state: "brassage",
-                config: {
-                    url: "/brassage",
-                    templateUrl: "app/programme/brassage.html",
-                    controller: "BrassageController",
-                    controllerAs: "brassage",
-                    data: { pageTitle: "Brassage participatif" }
-                }
-            },
+            // {
+            //     state: "brassage",
+            //     config: {
+            //         url: "/brassage",
+            //         templateUrl: "app/programme/brassage.html",
+            //         controller: "BrassageController",
+            //         controllerAs: "brassage",
+            //         data: { pageTitle: "Brassage participatif" }
+            //     }
+            // },
             {
                 state: "expo-voiture",
                 config: {
