@@ -19,15 +19,9 @@
             // breadcrumb: [{link: "/", class: "active", title: "Accueil"}]
         };
 
-        vm.whisky = {
-            sku: "WHISKY_BM",
-            name: "Whisky Black Mountain",
-            price: 10,
-        };
-
         var defaultSize = "10";
         var defaultTreePrice = 15;
-        vm.tshirts = [
+        var tshirts = [
             {
                 sku: "TEE_1_BLANC",
                 name: "Modèle 1 - Blanc",
@@ -133,6 +127,21 @@
             { id: "22", display: 'Homme - XL' },
             { id: "23", display: 'Homme - XXL' },
         ];
+
+        vm.products = {
+            tshirts: {
+                enabled: false,
+                items: tshirts
+            },
+            whiskies: {
+                enabled: true,
+                items: [{
+                    sku: "WHISKY_BM",
+                    name: "Whisky Black Mountain",
+                    price: 10,
+                }]
+            }
+        };
 
         vm.cart = [];
 

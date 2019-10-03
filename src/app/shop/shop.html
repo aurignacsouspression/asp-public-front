@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9">
-            <div class="shop-items">
+            <div class="shop-items" ng-if="shop.products.tshirts.enabled">
                 <div id="tee-shirts" class="row">
                     <div class="col-md-12">
                         <h2 class="text-uppercase">T-shirts</h2>
@@ -15,7 +15,7 @@
                     </div>
                 </div>
 
-                <div class="shop-item" ng-repeat="item in shop.tshirts">
+                <div class="shop-item" ng-repeat="item in shop.products.tshirts.items">
                     <div asp-magnific-popup data-gallery="true">
                         <a ng-href="assets/shop/{{item.sku}}_M-Front.jpg" target="_self">
                             <img class="visual" ng-src="assets/shop/{{item.sku}}_T.jpg" alt="">
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="shop-items">
+            <div class="shop-items" ng-if="shop.products.whiskies.enabled">
                 <div id="whisky" class="row">
                     <div class="col-md-12">
                         <h2 class="text-uppercase">Whisky</h2>
@@ -58,16 +58,16 @@
                     </div>
                 </div>
 
-                <div class="shop-item">
+                <div class="shop-item" ng-repeat="item in shop.products.whiskies.items">
                     <div asp-magnific-popup>
-                        <a ng-href="assets/shop/{{shop.whisky.sku}}.jpg" target="_self">
-                            <img class="visual" ng-src="assets/shop/{{shop.whisky.sku}}_T.jpg" alt="">
+                        <a ng-href="assets/shop/{{item.sku}}.jpg" target="_self">
+                            <img class="visual" ng-src="assets/shop/{{item.sku}}_T.jpg" alt="">
                         </a>
                     </div>
                     <div class="item-infos">
                         <div class="item-header">
-                            <h5>{{shop.whisky.name}}</h5>
-                            <h5>{{shop.whisky.price}}€</h5>
+                            <h5>{{item.name}}</h5>
+                            <h5>{{item.price}}€</h5>
                         </div>
                         <div class="item-description">
                             <b>Prix total : 35€.</b> Volume : 50 cl. Edition spéciale "50 ans Woodstock" avec Finition Fut de Bière. Les 25€ restants seront à payer au moment du retrait.
@@ -76,7 +76,7 @@
                             <div class="item-size">
                             </div>
                             <div class="item-add">
-                                <button class="btn btn-primary btn-sm" ng-click="shop.addToCart(shop.whisky)">Ajouter</button>
+                                <button class="btn btn-primary btn-sm" ng-click="shop.addToCart(item)">Ajouter</button>
                             </div>
                         </div>
                     </div>
