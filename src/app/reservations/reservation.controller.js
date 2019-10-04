@@ -29,14 +29,14 @@
                 quantity: 0,
                 price: 16,
                 meals: [0, 0],
-                disabled: false
+                disabled: true
             }, {
                 sku: "002",
                 name: "Repas du dimanche midi",
                 quantity: 0,
                 price: 16,
                 meals: [0, 0],
-                disabled: false
+                disabled: true
             }
         ];
 

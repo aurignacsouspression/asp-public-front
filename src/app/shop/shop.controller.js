@@ -134,7 +134,7 @@
                 items: tshirts
             },
             whiskies: {
-                enabled: true,
+                enabled: false,
                 items: [{
                     sku: "WHISKY_BM",
                     name: "Whisky Black Mountain",
