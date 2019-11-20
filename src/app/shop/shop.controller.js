@@ -130,7 +130,7 @@
 
         vm.products = {
             tshirts: {
-                enabled: true,
+                enabled: false,
                 items: tshirts
             },
             whiskies: {
